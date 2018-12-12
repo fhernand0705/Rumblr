@@ -1,13 +1,11 @@
 <title>Profile</title>
 
 <%= erb :nav %>
-
-<h2>Welcome, <%= @user.first_name %></h2>
-
-<form action="/posts/create" method="get">
-    <input type="submit" name="submit" value="New Post">
+<form class="" action="/users/<%= @user.id %>" method="post">
+   <input type="submit" value="Cancel Account">
 </form>
 
+<h2>Welcome, <%= @user.first_name %></h2>
 
 
 

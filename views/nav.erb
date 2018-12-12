@@ -4,13 +4,13 @@
 <% if session['user_id'] == nil %>
     <a href="/">Create Account</a>
     <a href="/users/login">Login</a>
-<% end %>
 
-<% if session['user_id'] %>
-    <a href="?">Profile</a> 
+<% else %>
+    <a href="?">Profile</a>
     <a href="/posts/create">New Post</a>
 
     <form class="" action="/logout" method="post">
        <input type="submit" value="Log out">
     </form>
+
 <% end %>

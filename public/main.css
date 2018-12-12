@@ -1,0 +1,14 @@
+/******************** ENTRY PAGE GRID *****************/
+.container.medium {
+  width: fit-content;
+  margin-top: 20%;
+}
+
+#start-btn, #log-btn {
+  background-color: rgb(12, 0, 111);
+
+}
+
+#start-link, #log-link {
+  color: #2F98FF;
+}

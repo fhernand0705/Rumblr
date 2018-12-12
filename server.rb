@@ -13,7 +13,7 @@ end
 class Post < ActiveRecord::Base
 end
 
-################### WEB APP CONTROLLER LAYOUT ##########################
+####################### WEB APP CONTROLLER LAYOUT ##########################
 
 # HOME page
 get '/' do
@@ -30,7 +30,6 @@ get '/users/create' do
 
   erb :'/users/create'
 end
-
 
 # CREATE user
 post '/users/create' do
@@ -60,10 +59,18 @@ end
 
 # REDIRECT to new post
 get '/posts/:id' do
-   @post = Post.find(params['id'])
+  @post = Post.find(params['id'])
 
-   erb :'/posts/show'
+  erb :'/posts/show'
 end
+
+# READ all posts
+get '/posts/?' do
+  @posts = Post.all
+
+  erb :'/posts/all'
+end
+
 
 # READ login form
 get '/users/login' do
@@ -75,11 +82,28 @@ end
 post '/users/login' do
    user = User.find_by(email: params['email'])
    if user != nil
-     if user.password == params['password']
+       if user.password == params['password']
        session[:user_id] = user.id
-      redirect "/users/#{user.id}"
+       redirect "/users/#{user.id}"
     end
   end
+   erb :'/entry'
+end
+
+# USER logout
+post '/logout' do
+  session['user_id'] = nil
+
+  redirect '/'
+end
+
+# CANCEL user account
+post '/users/:id' do
+  @user = User.find(params['id'])
+  @user.destroy
+  session.clear
+
+  redirect '/'
 end
 
 # REDIRECT to user profile
@@ -87,17 +111,4 @@ get '/users/:id' do
   @user = User.find(params['id'])
 
   erb :'/users/profile'
-end
-
-# USER logout
-post '/logout' do
-  session['user_id'] = nil
-
-  redirect '/dashboard'
-end
-
-# DASHBOARD
-get '/dashboard' do
-
-  erb :'/dashboard'
 end
