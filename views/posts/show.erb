@@ -1,0 +1,8 @@
+<h1><%= @post.title %></h1>
+
+<p><%= @post.content %></p>
+
+<!-- add button to redirect to list of posts (most recent) -->
+<form action="/posts/create" method="get">
+    <input type="submit" name="submit" value="All Posts">
+</form>

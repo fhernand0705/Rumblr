@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
-# add 'enable :session'
+enable :sessions
 
 set :database, {adapter: "sqlite3", database: "database.sqlite3"}
 
@@ -18,14 +18,19 @@ end
 # HOME page
 get '/' do
 
-  erb :home
+  erb :entry
 end
 
 # READ signup form
 get '/users/create' do
 
+  if session['user_id'] != nil
+   redirect '/dashboard'
+  end
+
   erb :'/users/create'
 end
+
 
 # CREATE user
 post '/users/create' do
@@ -33,21 +38,22 @@ post '/users/create' do
           last_name: params['last_name'], email: params['email'],
           password: params['password'], birthday: params['birthday'])
   @user.save
+  session[:user_id] = @user.id
 
   redirect "/users/#{@user.id}"
 end
 
-# REDIRECT to user profile
-get '/users/:id' do
-  @user = User.find(params['id'])
+# READ post form
+get '/posts/create' do
 
-  erb :'/users/profile'
+  erb :'/posts/create'
 end
 
 # CREATE new post
 post '/posts/create' do
   @post = Post.new(title: params['title'], content:
           params['content'], user_id: params['user_id'])
+  @post.save
 
   redirect "/posts/#{@post.id}"
 end
@@ -57,4 +63,41 @@ get '/posts/:id' do
    @post = Post.find(params['id'])
 
    erb :'/posts/show'
+end
+
+# READ login form
+get '/users/login' do
+
+   erb :'/users/login'
+end
+
+# USER login
+post '/users/login' do
+   user = User.find_by(email: params['email'])
+   if user != nil
+     if user.password == params['password']
+       session[:user_id] = user.id
+      redirect "/users/#{user.id}"
+    end
+  end
+end
+
+# REDIRECT to user profile
+get '/users/:id' do
+  @user = User.find(params['id'])
+
+  erb :'/users/profile'
+end
+
+# USER logout
+post '/logout' do
+  session['user_id'] = nil
+
+  redirect '/dashboard'
+end
+
+# DASHBOARD
+get '/dashboard' do
+
+  erb :'/dashboard'
 end
