@@ -51,10 +51,10 @@ end
 # CREATE new post
 post '/posts/create' do
   @post = Post.new(title: params['title'], content:
-          params['content'], user_id: params['user_id'])
+          params['content'], user_id: session['user_id'])
   @post.save
 
-  redirect "/posts/#{@post.id}"
+  redirect "/users/#{session['user_id']}"
 end
 
 # REDIRECT to new post
@@ -87,7 +87,7 @@ post '/users/login' do
        redirect "/users/#{user.id}"
     end
   end
-   erb :'/entry'
+       redirect '/'
 end
 
 # USER logout
@@ -109,10 +109,12 @@ end
 # REDIRECT to user profile
 get '/users/:id' do
   @user = User.find(params['id'])
+  @posts = Post.where(user_id: params['id']).last(20).reverse
 
   erb :'/users/profile'
 end
 
+# READ dashboard
 get '/dashboard' do
 
   erb :'/dashboard'

@@ -7,6 +7,9 @@
 
 <h2>Welcome, <%= @user.first_name %></h2>
 
-
+<% @posts.each do |p| %>
+  <h2><%= p.title %></h2>
+  <p><%= p.content %></p>
+<% end %>
 
 <!-- list remaining attributes (email, posts) in a styled container -->

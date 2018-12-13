@@ -6,8 +6,9 @@ html {
 /******************** ENTRY PAGE GRID *****************/
 .main-container {
   width: fit-content;
-  margin-top: -20%;
+  margin-top: -18%;
   float: right;
+
 }
 .sub-container.medium {
   width: fit-content;
@@ -15,10 +16,15 @@ html {
   margin-top: 20%;
 }
 
-#start-btn, #log-btn, #dash-btn {
+.home-icon {
+  width: 45px;
+  height: auto;
+}
+
+#start-btn, #log-btn {
   background-color: #323573;
   border-color: #323573;
-  color: whitesmoke;
+  color: #EDE9EA;
   font-size: 15px;
   border-radius: 5px;
   padding: 12px;
@@ -28,7 +34,7 @@ html {
 
 }
 
-#start-btn:hover, #log-btn:hover, #dash-btn:hover {
+#start-btn:hover, #log-btn:hover {
   background-color: #EDE9EA;
   color: #323573;
 }

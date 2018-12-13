@@ -1,9 +1,12 @@
-<form action="/posts/create" method="post">
+
+
+<form id="post-form" action="/posts/create" method="post">
+    <label for="name">Title</label>
     <input type="text" name="title" placeholder="title"><br>
+    <label for="message">Post</label>
     <textarea name="content" rows="20" cols="50"></textarea><br>
 
   <p>
     <button type="submit" onclick="alert('New post created!')">Submit</button>
   </p>
-
 </form>
