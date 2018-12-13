@@ -1,20 +1,13 @@
-<style>
-body {background: #EDE9EA; font-family: 'Roboto', sans-serif; color: #323573;}
-.join-container {padding-top: 5%;}
-#join-form {margin-left: 30%; width: 40%; margin-top: 5%;}
-label {font-size: -webkit-xxx-large; text-align: center;}
-#text {border-color: #323573;}
-#join-btn {background-color: #323573; border-color: #323573; color: #EDE9EA;}
-#join-btn:hover {background-color: #EDE9EA; border-color: #323573;color: #323573;}
-</style>
+<title>Join</title>
 
 <%= erb :nav %>
+<%= erb :style %>
 
-<title>Join</title>
+<!-- CREATE ACCOUNT GRID -->
 
 <div class="join-container">
     <form id="join-form" action="/users/create" method="post">
-      <label for="">Join Us</label>
+      <label class="join-header" for="">Join Us</label>
       <input id="text" type="text" name="first_name" autocomplete="off" required placeholder="first name"><br>
       <input id="text" type="text" name="last_name" autocomplete="off" required placeholder="last name"><br>
       <input id="text" type="text" name="email" autocomplete="off" required placeholder="email"><br>

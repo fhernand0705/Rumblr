@@ -1,12 +1,16 @@
+<title>Login</title>
 
+<%= erb :style %>
+<%= erb :nav %>
 
-<form action="/users/login" method="post">
-  <label for="">Login</label>
-  <input type="email" name="email" required placeholder="email"><br>
-  <input type="password" name="password" required placeholder="password"><br>
+<div class="login-container">
+  <form id="login-form" action="/users/login" method="post">
+    <label class="login-header" for="">Login</label>
+    <input id="email" type="email" name="email" autocomplete="off" required placeholder="email"><br>
+    <input id="password" type="password" name="password" autocomplete="off" required placeholder="password"><br>
 
-  <div>
-    <input type="submit" name="login" value="Login">
-  </div>
-
-</form>
+    <div>
+      <input id="login-btn" type="submit" name="login" value="Login">
+    </div>
+  </form>
+</div>
