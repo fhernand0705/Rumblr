@@ -1,14 +1,34 @@
+html {
+  width: auto;
+  height: 100%;
+}
+
 /******************** ENTRY PAGE GRID *****************/
-.container.medium {
+.main-container {
   width: fit-content;
+  margin-top: -20%;
+  float: right;
+}
+.sub-container.medium {
+  width: fit-content;
+  margin: auto;
   margin-top: 20%;
 }
 
-#start-btn, #log-btn {
-  background-color: rgb(12, 0, 111);
+#start-btn, #log-btn, #dash-btn {
+  background-color: #323573;
+  border-color: #323573;
+  color: whitesmoke;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
 
 }
 
-#start-link, #log-link {
-  color: #2F98FF;
+#start-btn:hover, #log-btn:hover, #dash-btn:hover {
+  background-color: #EDE9EA;
+  color: #323573;
 }

@@ -112,3 +112,8 @@ get '/users/:id' do
 
   erb :'/users/profile'
 end
+
+get '/dashboard' do
+
+  erb :'/dashboard'
+end

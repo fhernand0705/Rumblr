@@ -1,15 +1,25 @@
 <title>Entry</title>
 
-<!-- add class to buttons for styling -->
+<style>
+   body {
+     background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80');
+     background-size: cover;
+   }
+</style>
 
-<div class="container medium">
+<div class="main-container">
   <div class="row">
-    <button id="start-btn" class="column" type="button" name="create">
-    <a id="start-link" href="/users/create">Get Started</a></button>
+    <a id="dash-btn" class="column" href="/dashboard">Dashboard</a>
+  </div>
+</div>
+
+<!-- LOGIN AND GETTING STARTED CONTAINER -->
+<div class="sub-container medium">
+  <div class="row">
+    <a id="start-btn" class="column" href="/users/create">Get Started</a>
   </div>
 
   <div class="row">
-    <button id="log-btn" class="column" type="button" name="login">
-      <a id="log-link" href="/users/login"</a>Login</button>
+    <a id="log-btn" class="column" href="/users/login">Login</a>
   </div>
 </div>
