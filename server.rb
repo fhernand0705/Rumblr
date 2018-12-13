@@ -3,7 +3,13 @@ require 'sinatra/activerecord'
 
 enable :sessions
 
-set :database, {adapter: "sqlite3", database: "database.sqlite3"}
+configure :development do
+  set :database, {adapter: "sqlite3", database: "database.sqlite3"}
+end
+
+configure :production do
+  set :database, ENV["DATABASE_URL"]
+end
 
 # User model
 class User < ActiveRecord::Base
