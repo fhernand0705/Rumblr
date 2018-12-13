@@ -1,1 +1,6 @@
 <%= erb :nav %>
+
+<% @posts.each do |p| %>
+   <h3><%= p.title %></h3>
+   <p><%= p.content %></p>
+<% end %>

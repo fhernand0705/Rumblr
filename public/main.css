@@ -16,6 +16,10 @@ html {
   margin-top: 20%;
 }
 
+.first {
+  margin-right: 12px;
+}
+
 .home-icon {
   width: 45px;
   height: auto;

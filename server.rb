@@ -65,11 +65,11 @@ get '/posts/:id' do
 end
 
 # READ all posts
-get '/posts/?' do
-  @posts = Post.all
-
-  erb :'/posts/all'
-end
+# get '/posts/?' do
+#   @posts = Post.all
+#
+#   erb :'/dashboard'
+# end
 
 
 # READ login form
@@ -87,7 +87,7 @@ post '/users/login' do
        redirect "/users/#{user.id}"
     end
   end
-       redirect '/'
+       redirect '/' # redirect to page displaying message
 end
 
 # USER logout
@@ -115,7 +115,8 @@ get '/users/:id' do
 end
 
 # READ dashboard
-get '/dashboard' do
+get '/dashboard/?' do
+  @posts = Post.all.reverse
 
   erb :'/dashboard'
 end
