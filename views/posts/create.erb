@@ -1,12 +1,22 @@
+<style>
 
+   body {background: #EDE9EA; font-family: 'Roboto', sans-serif; color: #323573;}
+  #post-form {margin-left: 30%; width: fit-content; margin-top: 10%;}
+  #title, #text {border-color: #323573;}
+  .form-btn {background-color: #323573; border-color: #323573; color: #EDE9EA;}
+  .form-btn:hover {background-color: #EDE9EA; border-color: #323573;color: #323573;}
+
+</style>
+
+<!------------------------------- NEW POST GRID -------------------->
 
 <form id="post-form" action="/posts/create" method="post">
     <label for="name">Title</label>
-    <input type="text" name="title" placeholder="title"><br>
+    <input id="title" type="text" name="title" placeholder="enter title..." autocomplete="off"><br>
     <label for="message">Post</label>
-    <textarea name="content" rows="20" cols="50"></textarea><br>
+    <textarea id="text" name="content" placeholder="express yourself..." rows="30" cols="50"></textarea><br>
 
   <p>
-    <button type="submit" onclick="alert('New post created!')">Submit</button>
+    <button class="form-btn" type="submit" onclick="alert('New post created!')">Submit</button>
   </p>
 </form>

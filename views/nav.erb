@@ -1,16 +1,35 @@
-<!-- add nav bar with following menu items: profile, logout, new post, all posts -->
+<style>
+   body {
+     background: #EDE9EA;
+     font-family: 'Roboto', sans-serif;
+     color: #323573;
+   }
 
-    <!-- link to dashboard page -->
+   .container {
+     background: #323573;
+     position: absolute;
+   }
+
+   .row {
+     float: right;
+   }
+</style>
+
+<!--- NAV BAR -->
+
+<div class="container">
+   <div class="row">
+    <a href="/dashboard"><img src="/images/home-icon2.png" title="dashboard"></a>
 <% if session['user_id'] == nil %>
-    <a href="/">Create Account</a>
-    <a href="/users/login">Login</a>
-
+    <a href="/"><img src="/images/create-acc.png" title="create account"></a>
+    <a href="/users/login"><img src="/images/login.png" title="login"></a>
 <% else %>
-    <a href="?">Profile</a>
-    <a href="/posts/create">New Post</a>
+    <a href="?"><img src="/images/profile.png" title="profile"></a>
+    <a href="/posts/create"><img src="/images/post.png" title="create post"></a>
 
     <form class="" action="/logout" method="post">
-       <input type="submit" value="Log out">
+      <a href=""><img src="/images/logout.png" title="logout"></a>
     </form>
-
 <% end %>
+  </div>
+</div>
