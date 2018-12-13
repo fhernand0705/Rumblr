@@ -120,7 +120,7 @@ get '/users/:id' do
   erb :'/users/profile'
 end
 
-# READ dashboard
+# READ dashboard w/all posts
 get '/dashboard/?' do
   @posts = Post.all.reverse
 

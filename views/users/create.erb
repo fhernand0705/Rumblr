@@ -1,16 +1,28 @@
-<title>Sign Up</title>
+<style>
+body {background: #EDE9EA; font-family: 'Roboto', sans-serif; color: #323573;}
+.join-container {padding-top: 5%;}
+#join-form {margin-left: 30%; width: 40%; margin-top: 5%;}
+label {font-size: -webkit-xxx-large; text-align: center;}
+#text {border-color: #323573;}
+#join-btn {background-color: #323573; border-color: #323573; color: #EDE9EA;}
+#join-btn:hover {background-color: #EDE9EA; border-color: #323573;color: #323573;}
+</style>
 
-<h1>Join Us</h1>
+<%= erb :nav %>
 
-<form action="/users/create" method="post">
-  <input type="text" name="first_name" required placeholder="first name"><br>
-  <input type="text" name="last_name" required placeholder="last name"><br>
-  <input type="email" name="email" required placeholder="email"><br>
-  <input type="password" name="password" required placeholder="password"><br>
-  <input type="text" name="birthday" required placeholder="date of birth">
+<title>Join</title>
 
-  <div>
-    <input type="submit" name="submit">
-  </div>
+<div class="join-container">
+    <form id="join-form" action="/users/create" method="post">
+      <label for="">Join Us</label>
+      <input id="text" type="text" name="first_name" autocomplete="off" required placeholder="first name"><br>
+      <input id="text" type="text" name="last_name" autocomplete="off" required placeholder="last name"><br>
+      <input id="text" type="text" name="email" autocomplete="off" required placeholder="email"><br>
+      <input id="text" type="text" name="password" required placeholder="password"><br>
+      <input id="text" type="text" name="birthday" autocomplete="off" required placeholder="date of birth...mm/dd/yyyy">
 
-</form>
+      <div>
+        <input id="join-btn" type="submit" name="Join">
+      </div>
+    </form>
+</div>
