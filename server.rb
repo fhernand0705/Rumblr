@@ -70,13 +70,6 @@ get '/posts/:id' do
   erb :'/posts/show'
 end
 
-# READ all posts
-# get '/posts/?' do
-#   @posts = Post.all
-#
-#   erb :'/dashboard'
-# end
-
 
 # READ login form
 get '/users/login' do
@@ -125,4 +118,11 @@ get '/dashboard/?' do
   @posts = Post.all.reverse
 
   erb :'/dashboard'
+end
+
+post '/posts/:id' do
+  @post = Post.find(params['id'])
+  @post.destroy
+
+  redirect "/users/#{session['user_id']}"
 end

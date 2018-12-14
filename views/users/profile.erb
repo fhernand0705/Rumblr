@@ -1,15 +1,32 @@
 <title>Profile</title>
 
 <%= erb :nav %>
-<form class="" action="/users/<%= @user.id %>" method="post">
-   <input type="submit" value="Cancel Account">
-</form>
+<%= erb :style %>
 
-<h2>Welcome, <%= @user.first_name %></h2>
+<div class="pro-container">
+
+  <div class="row box">
+     <div class="column"><h3>Hi, <%= @user.first_name %></h3></div>
+  </div>
+
+  <div class="row box">
+     <div class="column"><h3>Birthday: <%= @user.birthday %></h3></div>
+  </div>
+
+  <div class="column">
+     <form class="column" action="/users/<%= @user.id %>" method="post">
+          <input id="cancel-btn" type="submit" value="Cancel Account">
+     </form>
+  </div>
+</div>
+
 
 <% @posts.each do |p| %>
   <h2><%= p.title %></h2>
   <p><%= p.content %></p>
-<% end %>
 
-<!-- list remaining attributes (email, posts) in a styled container -->
+  <form action="/posts/<%= p.id %>" method="post">
+    <input type="submit" value="Delete">
+  </form>
+
+<% end %>
