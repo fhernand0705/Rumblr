@@ -2,22 +2,32 @@
 
 <style>
    body {
-     background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80');
+     background-image: url('/images/bg.jpg');
      background-size: cover;
-     font-family: 'Roboto', sans-serif;
+     background-position: 150px 50px;
+     font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
+     font-weight: bold;
    }
 </style>
 
 <!-- HOME ICON CONTAINER -->
-<div class="main-container">
+<!-- <div class="main-container">
   <div class="row first">
-    <form action="/dashboard/?" method="get">
-        <a id="dash-btn" class="column" href="/dashboard"><img class="home-icon" src="/images/home-icon.png" title="dashboard"></a>
-    </form>
+  </div>
+</div> -->
+
+<!-- 'LOGIN' AND 'GETTING STARTED' CONTAINER -->
+
+<div class="logo-container">
+   <div class="row"><h1 class="pri-logo">FILMSTER</h1></div>
+</div>
+   <form action="/dashboard/?" method="get">
+     <a class="column img" href="/dashboard"><img class="home-icon" src="/images/home-icon3.png" title="dashboard"></a>
+   </form>
+
   </div>
 </div>
 
-<!-- 'LOGIN' AND 'GETTING STARTED' CONTAINER -->
 <div class="sub-container medium">
   <div class="row">
     <a id="start-btn" class="column" href="/users/create">Get Started</a>

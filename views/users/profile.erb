@@ -3,6 +3,8 @@
 <%= erb :nav %>
 <%= erb :style %>
 
+<!-- USER'S INFO BOX -->
+
 <div class="pro-container">
 
   <div class="row box">
@@ -15,19 +17,23 @@
 
   <div class="column">
      <form class="column" action="/users/<%= @user.id %>" method="post">
-          <input id="cancel-btn" type="submit" value="Cancel Account">
+       <a href="/"><img id="cancel-btn" src="/images/cancel.png" title="cancel account"></a>
      </form>
   </div>
 </div>
 
+<!-- USER'S LIST OF POSTS -->
+
 <div class="post-container">
   <% @posts.each do |p| %>
+  <div data-aos="flip-up" data-aos-delay="700" data-aos-easing="ease-in-out">
     <h2><%= p.title %></h2>
-    <textarea name="text" rows="25" cols="30"><%= p.content %></textarea>
+    <hr style="border-color:#B80C09;margin-right:50%;">
+    <textarea class="post-box" rows="125" cols="30" readonly><%= p.content %></textarea>
 
   <form action="/posts/<%= p.id %>" method="post">
     <input type="submit" value="Delete">
   </form>
-
+</div>
   <% end %>
 </div>

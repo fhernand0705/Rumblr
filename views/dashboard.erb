@@ -1,9 +1,15 @@
+<title>Dashboard</title>
+
 <%= erb :nav %>
 
-<div class="post2-container">
+<div class="dash-container">
   <% @posts.each do |p| %>
+
+  <div data-aos="zoom-out" data-aos-delay="600" data-aos-easing="ease-in-out">
     <h2><%= p.title %></h2>
-    <textarea  class="text-box" name="text" autocomplete="off" rows="25" cols="30"><%= p.content %></textarea>
+    <hr style="border-color:#B80C09;margin-right:50%;">
+    <textarea class="text-box" name="text" rows="25" cols="30" readonly><%= p.content %></textarea>
+  </div>
 
   <% end %>
 </div>

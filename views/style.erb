@@ -1,8 +1,9 @@
 <style>
 body {
     background: #EDE9EA;
-    font-family: 'Roboto',
-    sans-serif; color: #B80C09;
+    font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
+    color: #B80C09;
+    scroll-behavior: smooth;
   }
 
 /* NAV BAR  */
@@ -18,6 +19,14 @@ body {
 .row {
     float: right;
   }
+
+.sec-logo {
+  font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
+  color: #01BAEF;
+  font-weight:bold;
+  position: relative;
+  right: 40pc;
+}
 
 /* CREATE ACCOUNT SECTION  */
 
@@ -115,15 +124,7 @@ body {
 }
 
 #cancel-btn {
-  background-color: transparent;
-  color: #B80C09;
-  border-color: #B80C09;
-  margin-left: 30%;
-}
-
-#cancel-btn:hover {
-  background-color: #B80C09;
-  color: #01BAEF;
+  margin-left: 80%;
 }
 
 /* USER'S POSTS */
@@ -132,18 +133,24 @@ body {
   width: fit-content;
   margin-top: 10%;
   position: absolute;
+
 }
 
 /* DASHBOARD NEWSFEED */
-.post2-container {
+.dash-container {
   width: fit-content;
   margin-top: 10%;
   position: absolute;
- margin-left: 35%;
+  margin-left: 35%;
 }
 
-.text-box {
+.text-box, .post-box {
   border-color: #01BAEF;
+  resize: none;
+  height: 15pc;
+  width: 20pc;
+  border: #01BAEF solid 3px;
+
 }
 
 </style>
