@@ -9,11 +9,11 @@
     <a href="/"><img src="/images/create-acc.png" title="create account"></a>
     <a href="/users/login"><img src="/images/login.png" title="login"></a>
 <% else %>
-    <a href="?"><img src="/images/profile.png" title="profile"></a>
+    <a href="/users/<%= session['user_id'] %>"><img src="/images/profile.png" title="profile"></a>
     <a href="/posts/create"><img src="/images/post.png" title="create post"></a>
 
     <form class="" action="/logout" method="post">
-      <a href=""><img src="/images/logout.png" title="logout"></a>
+      <a href="/" onclick="alert('Logout successful')"><img src="/images/logout.png" title="logout"></a>
     </form>
 <% end %>
   </div>

@@ -20,13 +20,14 @@
   </div>
 </div>
 
-
-<% @posts.each do |p| %>
-  <h2><%= p.title %></h2>
-  <p><%= p.content %></p>
+<div class="post-container">
+  <% @posts.each do |p| %>
+    <h2><%= p.title %></h2>
+    <textarea name="text" rows="25" cols="30"><%= p.content %></textarea>
 
   <form action="/posts/<%= p.id %>" method="post">
     <input type="submit" value="Delete">
   </form>
 
-<% end %>
+  <% end %>
+</div>

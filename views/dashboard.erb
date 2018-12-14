@@ -1,6 +1,9 @@
 <%= erb :nav %>
 
-<% @posts.each do |p| %>
-   <h3><%= p.title %></h3>
-   <p><%= p.content %></p>
-<% end %>
+<div class="post2-container">
+  <% @posts.each do |p| %>
+    <h2><%= p.title %></h2>
+    <textarea  class="text-box" name="text" autocomplete="off" rows="25" cols="30"><%= p.content %></textarea>
+
+  <% end %>
+</div>
