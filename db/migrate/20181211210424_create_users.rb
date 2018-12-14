@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :password
       t.date :birthday
+      t.string :password_hash
     end
   end
 end

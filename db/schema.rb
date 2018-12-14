@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_210450) do
     t.string "email"
     t.string "password"
     t.date "birthday"
+    t.string "password_hash"
   end
 
 end

@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'bcrypt'
 
 enable :sessions
 
@@ -13,6 +14,16 @@ end
 
 # User model
 class User < ActiveRecord::Base
+  include BCrypt
+
+  def password
+    @password ||= Password.new(password_hash)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_hash = @password
+  end
 end
 
 # Post model
@@ -23,6 +34,7 @@ end
 
 # HOME page
 get '/' do
+session['user_id'] = nil
 
   erb :entry
 end
@@ -70,9 +82,10 @@ get '/posts/:id' do
   erb :'/posts/show'
 end
 
-
 # READ login form
 get '/users/login' do
+
+   session['user_id'] = nil
 
    erb :'/users/login'
 end
@@ -120,6 +133,7 @@ get '/dashboard/?' do
   erb :'/dashboard'
 end
 
+# DELETE posts
 post '/posts/:id' do
   @post = Post.find(params['id'])
   @post.destroy

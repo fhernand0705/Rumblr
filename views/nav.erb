@@ -4,18 +4,20 @@
 
 <div class="container">
    <div class="row">
-     <h1 class="sec-logo">FILMSTER</h1>
-    <a href="/dashboard"><img src="/images/home-icon2.png" title="dashboard"></a>
+   <h1 class="sec-logo">FILMSTER</h1>
 <% if session['user_id'] == nil %>
+    <a href="/dashboard"><img src="/images/home-icon2.png" title="dashboard"></a>
     <a href="/"><img src="/images/create-acc.png" title="create account"></a>
     <a href="/users/login"><img src="/images/login.png" title="login"></a>
-<% else %>
+<% end %>
+<% if session['user_id'] %>
+    <a href="/dashboard"><img src="/images/home-icon2.png" title="dashboard"></a>
     <a href="/users/<%= session['user_id'] %>"><img src="/images/profile.png" title="profile"></a>
     <a href="/posts/create"><img src="/images/post.png" title="create post"></a>
-
-    <form class="" action="/logout" method="post">
-      <a href="/" onclick="alert('Logout successful')"><img src="/images/logout.png" title="logout"></a>
+    <form action="/logout" method="post">
+      <a href="/" onclick="alert('You've successfully logout')"><img src="/images/logout.png" title="logout"></a>
     </form>
 <% end %>
+
   </div>
 </div>

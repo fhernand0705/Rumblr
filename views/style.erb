@@ -3,7 +3,7 @@ body {
     background: #EDE9EA;
     font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
     color: #B80C09;
-    scroll-behavior: smooth;
+
   }
 
 /* NAV BAR  */
@@ -24,60 +24,45 @@ body {
   font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
   color: #01BAEF;
   font-weight:bold;
-  position: relative;
-  right: 40pc;
+  position: absolute;
+  right: 58pc;
 }
 
 /* CREATE ACCOUNT SECTION  */
 
-.join-container {padding-top: 5%;}
+.join-container {
+  padding-top: 5%;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  top: 3pc;
 
-#join-form {
-    margin-left: 30%;
-    width: 40%;
-    margin-top: 5%;
-  }
+}
+
+#join-form {width: 25pc;}
 
 .join-header {
     font-size: -webkit-xxx-large;
     text-align: center;
   }
 
-#text {border-color: #323573;}
+#text {border-color: #01BAEF;}
 
-#join-btn {
-    background-color: #EDE9EA;
-    border-color: #323573;
-    color: #323573;
-  }
 
-#join-btn:hover {
-    background-color: #323573;
-    border-color: #323573;
-    color: #EDE9EA;
-  }
+/* NEW POST SECTION */
 
-/* CREATE POST SECTION */
+.newPost-container {
+  display: grid;
+  justify-content: center;
+  position: relative;
+  top: 9pc;
+}
 
-#post-form {
-   margin-left: 30%;
-   width: fit-content;
-   margin-top: 10%;
-  }
+#post-form {width: fit-content;}
 
-#title, #text {border-color: #323573;}
+#title, #text {border-color: #01BAEF;}
 
-.form-btn {
-    background-color: #EDE9EA;
-    border-color: #323573;
-    color: #323573
- }
 
-.form-btn:hover {
-    background-color: #323573;
-    border-color: #323573;
-    color: #EDE9EA;
- }
 
 /* LOGIN SECTION */
 
@@ -96,24 +81,14 @@ body {
   text-align: center;
 }
 
-#email, #password {border-color: #323573;}
+#email, #password {border-color: #01BAEF;}
 
-#login-btn {
-  background-color: #EDE9EA;
-  border-color: #323573;
-  color: #323573;
-}
 
-#login-btn:hover {
-  background-color: #323573;
-  border-color: #323573;
-  color: #EDE9EA;
-}
-
-/* USER'S PROFILE */
+/* USER'S PROFILE Box */
 .pro-container {
   position: relative;
   padding-top: 7%;
+  top: -5pc;
   float: right;
   background-color: #01BAEF;
   border-radius: 0px 10px;
@@ -129,18 +104,30 @@ body {
 
 /* USER'S POSTS */
 .post-container {
-  margin-left: 30%;
+  margin-left: 23pc;
   width: fit-content;
   margin-top: 10%;
-  position: absolute;
+  position: relative;
 
+}
+
+#delete-btn {
+  background-color: #01BAEF;
+  border-color: #01BAEF;
+  color: #B80C09;
+}
+
+#delete-btn:hover {
+  background-color: #B80C09;
+  border-color: #B80C09;
+  color: #01BAEF;
 }
 
 /* DASHBOARD NEWSFEED */
 .dash-container {
   width: fit-content;
   margin-top: 10%;
-  position: absolute;
+  position: relative;
   margin-left: 35%;
 }
 
@@ -152,5 +139,23 @@ body {
   border: #01BAEF solid 3px;
 
 }
+
+/* LOGIN/SUBMIT/JOIN BTNS (shared properties) */
+#login-btn,
+#join-btn,
+.form-btn {
+  background-color: #EDE9EA;
+  border-color: #01BAEF;
+  color: #B80C09;
+}
+
+#login-btn:hover,
+#join-btn:hover,
+.form-btn:hover {
+  background-color: #01BAEF;
+  border-color: #01BAEF;
+  color: #B80C09;
+}
+
 
 </style>
