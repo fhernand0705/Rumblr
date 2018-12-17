@@ -1,37 +1,35 @@
 <title>Entry</title>
 
-<style>
-
-   body {
-     background-image: url('/images/bg.jpg');
+<!-- <style>
+   .bg-img {
      background-size: cover;
      background-position: 150px 50px;
-     font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
-     font-weight: bold;
+     z-index: 0;
+     position: fixed;
    }
+</style> -->
 
-</style>
+<!-- ENTRY PAGE NAV BAR -->
+<div class="main-container">
+  <div class="top-container">
+    <div class="row">
+     <div class="column"><h1 class="primary-logo">FILMSTER</h1></div>
+     <div class="column-5">
+     <form action="/dashboard/?" method="get">
+        <input class="home-icon" type="image" src="/images/home-icon3.png" title="dashboard">
+     </form>
+     </div>
+  </div>
+</div>
 
 <!-- 'LOGIN' AND 'GETTING STARTED' CONTAINER -->
-
-<div class="logo-container">
-   <div class="row"><h1 class="pri-logo">FILMSTER</h1></div>
-</div>
-   <form action="/dashboard/?" method="get">
-     <a class="column img" href="/dashboard"><img class="home-icon" src="/images/home-icon3.png" title="dashboard"></a>
-   </form>
-
-  </div>
-</div>
-
-<div class="sub-container medium">
+<div class="mid-container medium">
   <div class="row">
-    <a id="start-btn" class="column" href="/users/create">Get Started</a>
+    <div class="column1"><a id="start-btn" href="/users/create">Get Started</a></div>
   </div>
-
   <div class="row">
-    <a id="log-btn" class="column" href="/users/login">Login</a>
+    <div class="column2"><a id="log-btn" href="/users/login">Login</a></div>
   </div>
+ </div>
 </div>
-
 <%= erb :footer %>

@@ -1,10 +1,8 @@
 <title>Join</title>
 
-<%= erb :nav %>
-<%= erb :style %>
-
 <!-- CREATE ACCOUNT GRID -->
-
+<div class="main-container">
+<%= erb :nav %>
 <div class="join-container">
     <form id="join-form" action="/users/create" method="post">
       <label class="join-header" for="">Join Us</label>
@@ -18,5 +16,6 @@
         <input id="join-btn" type="submit" name="Join">
       </div>
     </form>
+</div>
 </div>
 <%= erb :footer %>
