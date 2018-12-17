@@ -28,12 +28,12 @@
 <div class="post-container">
     <% @posts.each do |p| %>
        <!-- <div data-aos="flip-up" data-aos-delay="700" data-aos-easing="ease-in-out"> -->
-          <h2><%= p.title %></h2>
-          <hr style="border-color:#B80C09;margin-right:50%;">
-          <textarea class="post-box" rows="125" cols="30" readonly><%= p.content %></textarea>
-          <form action="/posts/<%= p.id %>" method="post">
-          <input id="delete-btn" type="submit" value="Delete">
-          </form>
+      <h2><%= p.title %></h2>
+      <hr style="border-color:#B80C09;margin-right:50%;">
+      <textarea class="post-box" rows="125" cols="30" readonly><%= p.content %></textarea>
+      <form action="/posts/<%= p.id %>" method="post">
+      <input id="delete-btn" type="submit" value="Delete">
+      </form>
        <!-- </div> -->
    <% end %>
 </div>

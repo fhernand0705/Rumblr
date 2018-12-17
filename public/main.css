@@ -18,16 +18,16 @@ body {
     top: 0;
 }
 
-.row {
+/* .row {
     float: right;
-}
+} */
 
 .sec-logo {
     font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
     color: #01BAEF;
     font-weight: bold;
     /* position: absolute;
-    right: 58pc; */
+    right: 50pc; */
 }
 
 /******************** ENTRY PAGE GRID *******************/
@@ -158,11 +158,9 @@ img:hover {
 
 /* USER'S POSTS */
 .post-container {
-  margin-left: 23pc;
-  width: fit-content;
+  display: grid;
+  justify-content: center;
   margin-top: 10%;
-  position: relative;
-
 }
 
 #delete-btn {
