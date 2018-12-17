@@ -1,19 +1,28 @@
 html {
   max-height: 100%;
   max-width: auto;
+  background-color: #EDE9EA;
 }
 
 body {
   font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
   color: #B80C09;
-
+  -webkit-background-size: cover;
 }
 
 .main-container {
   min-height: 90vh;
+  min-width: auto;
+
 }
 
 /********************** NAV BAR  **********************/
+#entry-bg {
+  background-image: url('/images/bg.jpg');
+  background-size: cover;
+  background-position: 150px 50px;
+}
+
 .nav-container {
     background: #B80C09;
     position: fixed;
@@ -29,12 +38,6 @@ body {
 }
 
 /******************** ENTRY PAGE *******************/
-/* #entry-body {
-  background-image: url('/images/bg.jpg');
-  background-size: cover;
-  background-position: 150px 50px;
-} */
-
 .mid-container.medium {
   width: fit-content;
   margin: auto;
@@ -79,7 +82,6 @@ body {
 }
 
 /******************* CREATE ACCOUNT SECTION  **************/
-
 .join-container {
   padding-top: 5%;
   position: relative;
