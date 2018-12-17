@@ -1,8 +1,6 @@
-<%= erb :style %>
-
 <!------ NAV BAR ------->
 
-<div class="container">
+<div class="nav-container">
    <div class="row">
    <h1 class="sec-logo">FILMSTER</h1>
 <% if session['user_id'] == nil %>
@@ -17,7 +15,7 @@
     <form action="/logout" method="post">
       <a href="/" onclick="alert('You've successfully logout')"><img src="/images/logout.png" title="logout"></a>
     </form>
-<% end %>
 
-  </div>
+<% end %>
+</div>
 </div>
