@@ -32,7 +32,6 @@ body {
 }
 
 .sec-logo {
-    font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
     color: #01BAEF;
     font-weight: bold;
 }
@@ -175,17 +174,23 @@ body {
 .dash-container {
   width: fit-content;
   margin-top: 10%;
+  padding: 10px 50px 25px;
   position: relative;
   margin-left: 35%;
+  background-color: whitesmoke;
+}
+
+.post-title {
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .text-box, .post-box {
   border-color: #01BAEF;
   resize: none;
-  height: 15pc;
-  width: 20pc;
+  height: 15em;
+  max-width: 100%;
   border: #01BAEF solid 3px;
-
 }
 
 /* LOGIN/SUBMIT/JOIN BTNS (shared properties) */

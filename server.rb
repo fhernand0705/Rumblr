@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     @password ||= Password.new(password_hash)
   end
 
-  def password=(new_password)
+  def password(new_password)
     @password = Password.create(new_password)
     self.password_hash = @password
   end
@@ -30,7 +30,7 @@ end
 class Post < ActiveRecord::Base
 end
 
-####################### WEB APP CONTROLLER LAYOUT ##########################
+####################### APP CONTROLLER ##########################
 
 # HOME page
 get '/' do
@@ -84,7 +84,6 @@ end
 
 # READ login form
 get '/users/login' do
-
    session['user_id'] = nil
 
    erb :'/users/login'
@@ -139,4 +138,16 @@ post '/posts/:id' do
   @post.destroy
 
   redirect "/users/#{session['user_id']}"
+end
+
+# EDIT posts
+get '/posts/:id' do
+  @post = Post.find(params['id'])
+
+  erb :'/edit'
+end
+
+# UPDATE posts
+patch '/posts/:id' do
+  
 end

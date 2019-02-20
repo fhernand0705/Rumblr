@@ -1,7 +1,4 @@
-<title>New Post</title>
-<%= erb :nav %>
-
-<!----- NEW POST GRID ----->
+<!-- EDIT POST -->
 <div class="newPost-container">
  <form id="post-form" action="/posts/create" method="post">
     <label for="name">Title</label>
@@ -10,9 +7,7 @@
     <textarea id="text" name="content" placeholder="express yourself..." rows="30" cols="50"></textarea><br>
 
     <p>
-    <button class="form-btn" type="submit" onclick="alert('New post created!')">Submit</button>
+      <button class="form-btn" type="submit" onclick="alert('New post created!')">Save Changes</button>
     </p>
  </form>
 </div>
-
-<%= erb :footer %>
