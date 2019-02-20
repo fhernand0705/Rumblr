@@ -13,7 +13,6 @@ body {
 .main-container {
   min-height: 90vh;
   min-width: auto;
-
 }
 
 /********************** NAV BAR  **********************/
@@ -132,8 +131,8 @@ body {
 #email, #password {border-color: #01BAEF;}
 
 
-/********************** USER'S PROFILE Box ****************/
-.pro-container {
+/********************** USER'S PROFILE CARD ****************/
+.card-container {
   position: relative;
   padding-top: 7%;
   top: -5pc;

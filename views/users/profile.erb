@@ -5,7 +5,7 @@
 
 <%= erb :nav %>
 
-<div class="pro-container">
+<div class="card-container">
   <div class="row box">
     <div class="column"><h3>Hi, <%= @user.first_name %></h3></div>
   </div>
@@ -32,8 +32,8 @@
       <form action="/posts/<%= p.id %>" method="post">
         <input id="delete-btn" type="submit" value="delete">
       </form>
-      <form action="/posts/<%= p.id %>" method="post">
-        <input id="delete-btn" type="submit" value="patch">
+      <form action="/posts/<%= p.id %>/edit" method="post">
+        <input id="delete-btn" type="submit" value="update">
       </form>
    <% end %>
  </div>

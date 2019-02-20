@@ -141,7 +141,7 @@ post '/posts/:id' do
 end
 
 # EDIT posts
-get '/posts/:id' do
+get '/posts/:id/edit' do
   @post = Post.find(params['id'])
 
   erb :'/edit'
@@ -149,5 +149,5 @@ end
 
 # UPDATE posts
 patch '/posts/:id' do
-  
+
 end
