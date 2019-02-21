@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     @password ||= Password.new(password_hash)
   end
 
-  def password(new_password)
+  def password=(new_password)
     @password = Password.create(new_password)
     self.password_hash = @password
   end
@@ -52,8 +52,10 @@ end
 # CREATE user
 post '/users/create' do
   @user = User.new(first_name: params['first_name'],
-          last_name: params['last_name'], email: params['email'],
-          password: params['password'], birthday: params['birthday'])
+                   last_name: params['last_name'],
+                   email: params['email'],
+                   password: params['password'],
+                   birthday: params['birthday'])
   @user.save
   session[:user_id] = @user.id
 
