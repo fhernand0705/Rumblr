@@ -134,6 +134,14 @@ get '/dashboard/?' do
   erb :'/dashboard'
 end
 
+# UPDATE posts
+patch '/posts/:id' do
+  @post = Post.find(params['id'])
+  @post.update(title: params['title'], content: params['content'])
+
+  redirect "/users/#{session['user_id']}"
+end
+
 # DELETE posts
 post '/posts/:id' do
   @post = Post.find(params['id'])
@@ -146,10 +154,5 @@ end
 get '/posts/:id/edit' do
   @post = Post.find(params['id'])
 
-  erb :'/edit'
-end
-
-# UPDATE posts
-patch '/posts/:id' do
-
+  erb :'/posts/edit'
 end

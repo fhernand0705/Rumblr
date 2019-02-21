@@ -32,9 +32,10 @@
       <form action="/posts/<%= p.id %>" method="post">
         <input id="delete-btn" type="submit" value="delete">
       </form>
-      <form action="/posts/<%= p.id %>/edit" method="post">
-        <input id="delete-btn" type="submit" value="update">
-      </form>
+      <!-- <form action="/posts/<%#= p.id %>/edit" method="post">
+        <input id="delete-btn" type="submit" value="edit">
+      </form> -->
+      <p><a href="/posts/<%= p.id %>/edit">Edit</a></p>
    <% end %>
  </div>
 </div>
