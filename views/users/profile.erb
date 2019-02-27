@@ -30,6 +30,7 @@
       <hr style="border-color:#B80C09;margin-right:50%;">
       <textarea class="post-box" rows="125" cols="30" readonly><%= p.content %></textarea>
       <form action="/posts/<%= p.id %>" method="post">
+        <input id="hidden" type="hidden" name="_method" value="delete">
         <input id="delete-btn" type="submit" value="delete">
       </form>
       <!-- <form action="/posts/<%#= p.id %>/edit" method="post">

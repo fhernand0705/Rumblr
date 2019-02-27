@@ -3,6 +3,7 @@ require 'sinatra/activerecord'
 require 'bcrypt'
 
 enable :sessions
+set :method_override, true
 
 configure :development do
   set :database, {adapter: "sqlite3", database: "database.sqlite3"}
@@ -79,7 +80,7 @@ end
 
 # REDIRECT to new post
 get '/posts/:id' do
-  @post = Post.find(params['id'])
+  @post = Post.find_by_id(params[:id])
 
   erb :'/posts/show'
 end
@@ -110,7 +111,7 @@ post '/logout' do
   redirect '/'
 end
 
-# CANCEL user account
+# DESTROY user account
 post '/users/:id' do
   @user = User.find(params['id'])
   @user.destroy
@@ -134,6 +135,13 @@ get '/dashboard/?' do
   erb :'/dashboard'
 end
 
+# EDIT posts
+get '/posts/:id/edit' do
+  @post = Post.find_by_id(params[:id])
+
+  erb :'/posts/edit'
+end
+
 # UPDATE posts
 patch '/posts/:id' do
   @post = Post.find(params['id'])
@@ -143,16 +151,9 @@ patch '/posts/:id' do
 end
 
 # DELETE posts
-post '/posts/:id' do
+post '/posts/:id/delete' do
   @post = Post.find(params['id'])
   @post.destroy
 
   redirect "/users/#{session['user_id']}"
-end
-
-# EDIT posts
-get '/posts/:id/edit' do
-  @post = Post.find(params['id'])
-
-  erb :'/posts/edit'
 end
