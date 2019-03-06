@@ -134,19 +134,39 @@ body {
 /********************** USER'S PROFILE CARD ****************/
 .card-container {
   position: relative;
-  padding-top: 7%;
-  top: -5pc;
   float: right;
-  background-color: #01BAEF;
+  right: .5em;
+  background-color: #EDE9EA;
   border-radius: 0px 10px;
+  box-shadow: 0 0 5px 0 rgba(43,43,43,0.1),
+   0 11px 6px -7px rgba(43,43,43,0.1);
 }
 
-.row.box {
-  float: none;
+.box {
+  margin-top: 8%;
+}
+
+.header {
+  text-transform: uppercase;
+  color: #01BAEF;
+  font-weight: bold;
+}
+
+.header, .headerVal {
+  line-height: .25;
 }
 
 #cancel-btn {
-  margin-left: 80%;
+  margin-left: 20%;
+  background-color: #01BAEF;
+  border-color: #01BAEF;
+  color: #B80C09;
+}
+
+#cancel-btn:hover {
+  background-color: #B80C09;
+  border-color: #B80C09;
+  color: #01BAEF;
 }
 
 /*********************** USER'S POSTS ******************/

@@ -6,18 +6,16 @@
 <%= erb :nav %>
 
 <div class="card-container">
-  <div class="row box">
-    <div class="column"><h3>Hi, <%= @user.first_name %></h3></div>
-  </div>
+  <div class="row box"><div class="column"><h4 class="header">name</h4></div></div>
+  <div class="row box"><div class="column"><h4 class="headerVal"><%= @user.first_name %></h4></div></div>
+  <div class="row box"><div class="column"><h4 class="header">email</h4></div></div>
+  <div class="row box"><div class="column"><h4 class="headerVal"><%= @user.email %></h4></div></div>
 
-  <div class="row box">
-    <div class="column"><h3>Email: <%= @user.email %></h3></div>
-  </div>
-<hr style="border-color:#B80C09;">
+  <hr style="border-color:#B80C09;">
 
-<div class="column">
+  <div class="column">
      <form class="column" action="/users/<%= @user.id %>" method="post">
-       <input id="cancel-btn" type="image" src="/images/cancel.png">
+       <input id="cancel-btn" type="submit" value="Cancel">
      </form>
   </div>
 </div>
