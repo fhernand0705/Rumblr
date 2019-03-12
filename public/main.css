@@ -15,13 +15,12 @@ body {
   min-width: auto;
 }
 
-/********************** NAV BAR  **********************/
 #entry-bg {
   background-image: url('/images/bg.jpg');
   background-size: cover;
   background-position: 150px 50px;
 }
-
+/********************** NAV BAR  **********************/
 .nav-container {
     background: #B80C09;
     position: fixed;
@@ -133,7 +132,7 @@ body {
 
 /********************** USER'S PROFILE CARD ****************/
 .card-container {
-  position: relative;
+  position: absolute;
   float: right;
   right: .5em;
   background-color: #EDE9EA;
@@ -171,40 +170,79 @@ body {
 
 /*********************** USER'S POSTS ******************/
 .post-container {
-  display: grid;
-  justify-content: center;
+  width: fit-content;
   margin-top: 10%;
+  margin-left: 35%;
+  padding: 10px 30px 25px;
+  background-color: whitesmoke;
 }
 
-#delete-btn {
+#delete-btn, #edit-btn {
+  width: 100%;
   background-color: #01BAEF;
   border-color: #01BAEF;
   color: #B80C09;
 }
 
-#delete-btn:hover {
+#delete-btn:hover, #edit-btn:hover {
   background-color: #B80C09;
   border-color: #B80C09;
   color: #01BAEF;
 }
 
+/********************** EDIT POST PAGE **************/
+.save-btn {
+  width: 100%;
+}
+
+.back-btn {
+  margin: -20px 0 0 0;
+}
+
+.save-btn, .back-btn {
+  background-color: #EDE9EA;
+  border-color: #01BAEF;
+  color: #B80C09;
+}
+
+.save-btn:hover,
+.back-btn:hover {
+  background-color: #01BAEF;
+  border-color: #01BAEF;
+  color: #B80C09;
+}
+
 /*********************** DASHBOARD NEWSFEED *************/
+.header-container {
+  display: grid;
+  justify-content: center;
+}
+
+.dash-header {
+  position: relative;
+  margin-top: 4em;
+  text-transform: uppercase;
+  color: #01BAEF;
+  font-weight: bold;
+}
 
 .dash-container {
   width: fit-content;
-  margin-top: 10%;
-  padding: 10px 50px 25px;
+  margin-top: 1.5%;
+  padding: 10px 30px 25px;
   position: relative;
-  margin-left: 35%;
+  margin-left: 30%;
   background-color: whitesmoke;
 }
 
 .post-title {
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
+  line-height: .5em;
+  margin-top: 15%;
 }
 
-.text-box, .post-box {
+.text-box {
   border-color: #01BAEF;
   resize: none;
   height: 15em;

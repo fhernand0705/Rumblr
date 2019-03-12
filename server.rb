@@ -155,8 +155,8 @@ patch '/posts/:id' do
 end
 
 # DELETE posts
-post '/posts/:id/delete' do
-  @post = Post.find(params['id'])
+delete '/posts/:id' do
+  @post = Post.find_by_id(params[:id])
   @post.destroy
 
   redirect "/users/#{session['user_id']}"

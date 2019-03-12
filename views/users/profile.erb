@@ -22,19 +22,22 @@
 
 <!-- USER'S LIST OF POSTS -->
 
- <div class="post-container">
+<div class="post-container">
+  <% if @posts.present? %>
     <% @posts.each do |p| %>
-      <h2><%= p.title %></h2>
-      <hr style="border-color:#B80C09;margin-right:50%;">
-      <textarea class="post-box" rows="125" cols="30" readonly><%= p.content %></textarea>
+      <h2 class="post-title"><%= p.title %></h2>
+      <textarea class="text-box" rows="125" cols="30" readonly><%= p.content %></textarea>
       <form action="/posts/<%= p.id %>" method="post">
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input id="delete-btn" type="submit" value="delete">
       </form>
       <form action="/posts/<%= p.id %>/edit" method="get">
-        <input id="delete-btn" type="submit" value="edit">
+        <input id="edit-btn" type="submit" value="edit">
       </form>
     <% end %>
+  <% else %>
+    <h1 class="header">No posts found...</h1>
+  <% end %>
  </div>
 </div>
 

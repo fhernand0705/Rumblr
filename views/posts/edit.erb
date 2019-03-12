@@ -11,9 +11,9 @@
       <textarea id="text" name="content" rows="30" cols="50"><%= @post.content %></textarea><br>
 
       <p>
-        <button class="form-btn" type="submit" onclick="alert('Changes saved!')">Save Changes</button>
+        <button class="save-btn" type="submit" onclick="alert('Changes saved!')">Save Changes</button>
       </p>
-      <a href="/users/<%= session['user_id'] %>">Back</a>
+      <button class="back-btn"><a href="/users/<%= session['user_id'] %>"></a>Back</button>
    </form>
   </div>
 </div>
