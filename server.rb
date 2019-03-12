@@ -67,7 +67,7 @@ post '/users/create' do
   redirect "/users/#{@user.id}"
 end
 
-# READ post form
+# READ new post
 get '/posts/create' do
 
   erb :'/posts/create'
@@ -84,7 +84,7 @@ end
 
 # REDIRECT to new post
 get '/posts/:id' do
-  @post = Post.find_by_id(params[:id])
+  @post = Post.find(params['id'])
 
   erb :'/posts/show'
 end
@@ -124,7 +124,7 @@ post '/users/:id' do
   redirect '/'
 end
 
-# REDIRECT to user profile
+# SHOW user profile
 get '/users/:id' do
   @user = User.find(params['id'])
   @posts = Post.where(user_id: params['id']).last(20).reverse
@@ -148,7 +148,7 @@ end
 
 # UPDATE posts
 patch '/posts/:id' do
-  @post = Post.find(params['id'])
+  @post = Post.find_by_id(params[:id])
   @post.update(title: params['title'], content: params['content'])
 
   redirect "/users/#{session['user_id']}"

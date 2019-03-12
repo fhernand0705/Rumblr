@@ -3,16 +3,17 @@
 
 <div class="main-container">
   <div class="newPost-container">
-   <form id="post-form" action="/posts/:id" method="post">
+   <form id="post-form" action="/posts/<%= @post.id %>" method="post">
       <input type="hidden" name="_method" value="patch">
       <label for="name">Title</label>
-      <input id="title" type="text" name="title" autocomplete="off"><br>
+      <input id="title" type="text" name="title" autocomplete="off" value="<%= @post.title %>"><br>
       <label for="message">Post</label>
-      <textarea id="text" name="content" value="patch" rows="30" cols="50"></textarea><br>
+      <textarea id="text" name="content" rows="30" cols="50"><%= @post.content %></textarea><br>
 
       <p>
         <button class="form-btn" type="submit" onclick="alert('Changes saved!')">Save Changes</button>
       </p>
+      <a href="/users/<%= session['user_id'] %>">Back</a>
    </form>
   </div>
 </div>

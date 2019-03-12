@@ -31,11 +31,10 @@
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input id="delete-btn" type="submit" value="delete">
       </form>
-      <!-- <form action="/posts/<%#= p.id %>/edit" method="post">
+      <form action="/posts/<%= p.id %>/edit" method="get">
         <input id="delete-btn" type="submit" value="edit">
-      </form> -->
-      <p><a href="/posts/<%= p.id %>/edit">Edit</a></p>
-   <% end %>
+      </form>
+    <% end %>
  </div>
 </div>
 
