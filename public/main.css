@@ -51,12 +51,25 @@ body {
 
 #log-btn {
   position: relative;
-  padding: 1pc 2.37pc;
-  top: 1pc;
+  padding: 1em 2.5em;
+  top: 1em;
 }
 
 #start-btn {
   padding: 15px;
+}
+
+#demo-btn {
+  position: relative;
+  top: 1.2em;
+  padding: 4px 2.9em;
+  background-color: rgb(4, 180, 26);
+  border-color: rgb(4, 180, 26);
+  color: #EDE9EA;
+  font-size: 12px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
 }
 
 #start-btn, #log-btn {
