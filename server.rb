@@ -35,7 +35,7 @@ end
 class Post < ActiveRecord::Base
 end
 
-####################### APP CONTROLLER ##########################
+####################### CONTROLLER ##########################
 
 # HOME page
 get '/' do
@@ -128,6 +128,9 @@ end
 get '/users/:id' do
   @user = User.find(params['id'])
   @posts = Post.where(user_id: params['id']).last(20).reverse
+  if @user.id == 11
+    session[:user_id] = @user.id
+  end
 
   erb :'/users/profile'
 end

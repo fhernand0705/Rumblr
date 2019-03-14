@@ -4,15 +4,16 @@
 <div class="main-container">
 <%= erb :nav %>
 
-<div class="login-container">
-  <form id="login-form" action="/users/login" method="post">
-    <label class="login-header" for="">Login</label>
-    <input id="email" type="email" name="email" autocomplete="off" required placeholder="email"><br>
-    <input id="password" type="password" name="password" autocomplete="off" required placeholder="password"><br>
-    <div>
-      <input id="login-btn" type="submit" name="login" value="Login">
-    </div>
-  </form>
-</div>
+  <div class="login-container">
+    <form id="login-form" action="/users/login" method="post">
+      <label class="login-header" for="">Login</label>
+      <input id="email" type="email" name="email" autocomplete="off" required placeholder="email"><br>
+      <input id="password" type="password" name="password" autocomplete="off" required placeholder="password"><br>
+      <div>
+        <input id="login-btn" type="submit" name="login" value="Login">
+      </div>
+    </form>
+  </div>
+
 </div>
 <%= erb :footer %>
