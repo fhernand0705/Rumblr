@@ -8,9 +8,9 @@
     <div class="column-2"><a href="/"><img src="/images/create-acc.png" title="create account"></a></div>
     <div class="column-2"><a href="/users/login"><img src="/images/login.png" title="login"></a></div>
  <% elsif session['user_id'] %>
-    <div class="column-2"><a href="/dashboard"><img src="/images/home-icon2.png" title="dashboard"></a></div>
-    <div class="column-2"><a href="/users/<%= session['user_id'] %>"><img src="/images/profile.png" title="profile"></a></div>
-    <div class="column-2"><a href="/posts/create"><img src="/images/post.png" title="create post"></a></div>
+    <div class="column-2"><a href="/dashboard"><img src="/images/home-icon2.png" class="dash" title="dashboard"></a></div>
+    <div class="column-2"><a href="/users/<%= session['user_id'] %>"><img src="/images/profile.png" class="user" title="profile"></a></div>
+    <div class="column-2"><a href="/posts/create"><img src="/images/post.png" class="post" title="create post"></a></div>
     <div class="column-2"><form action="/logout" method="post">
       <a href="/" onclick="alert('You've successfully logout')"><img src="/images/logout.png" title="logout"></a>
     </form>

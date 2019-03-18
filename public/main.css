@@ -34,6 +34,10 @@ body {
     font-weight: bold;
 }
 
+/* .active {
+  background-color: blue;
+} */
+
 /******************** ENTRY PAGE *******************/
 .mid-container.medium {
   width: fit-content;
