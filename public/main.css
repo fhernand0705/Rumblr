@@ -237,6 +237,8 @@ body {
   text-transform: uppercase;
   color: #01BAEF;
   font-weight: bold;
+  box-shadow: 0 0 10px 0 rgba(43,43,43,0.1),
+   0 11px 6px -7px rgba(43,43,43,0.1);
 }
 
 .dash-container {
@@ -246,6 +248,8 @@ body {
   position: relative;
   margin-left: 30%;
   background-color: whitesmoke;
+  box-shadow: 0 0 25px 0 rgba(43,43,43,0.1),
+   0 11px 15px -7px rgba(43,43,43,0.1);
 }
 
 .post-title {
