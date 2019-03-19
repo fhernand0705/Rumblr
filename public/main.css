@@ -34,10 +34,6 @@ body {
     font-weight: bold;
 }
 
-/* .active {
-  background-color: blue;
-} */
-
 /******************** ENTRY PAGE *******************/
 .mid-container.medium {
   width: fit-content;
@@ -265,6 +261,20 @@ body {
   height: 15em;
   max-width: 100%;
   border: #01BAEF solid 3px;
+}
+
+@media screen and (max-width: 900px){
+  .dash-container {
+    width: 90%;
+    margin-left: 5%;
+    top: 18em;
+  }
+  .dash-header {
+    top: 7em;
+  }
+  .sec-logo {
+    text-align: center;
+  }
 }
 
 /* LOGIN/SUBMIT/JOIN BTNS (shared properties) */
