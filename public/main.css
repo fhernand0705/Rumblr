@@ -29,6 +29,15 @@ body {
     top: 0;
 }
 
+.dash,.post,.user{
+  transition: .35s;
+}
+
+.dash:hover, .post:hover, .user:hover {
+  background-color: #01BAEF;
+  border-radius: 5px;
+}
+
 .sec-logo {
     color: #01BAEF;
     font-weight: bold;
@@ -267,17 +276,52 @@ body {
   border: #01BAEF solid 3px;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (min-width: 320px) and (max-width: 700px) {
+  .main-container {
+    min-height: 100%;
+  }
   .dash-container {
     width: 90%;
     margin-left: 5%;
     top: 18em;
+  }
+  .post-title {
+    line-height: 1.2em;
   }
   .dash-header {
     top: 7em;
   }
   .sec-logo {
     text-align: center;
+  }
+  .foot-container {
+    top: 20em;
+  }
+  .footer-row {
+    flex-direction: unset;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1200px) {
+  .main-container {
+    min-height: 100%;
+  }
+  .dash-container {
+    width: fit-content;
+    margin-left: 20%;
+    top: 0;
+  }
+  .dash-header {
+    top: 0;
+  }
+  .foot-container {
+    top: 3.5em;
+  }
+  .footer-link {
+    font-size: 1.5em !important;
+  }
+  .row {
+    flex-direction: unset;
   }
 }
 
@@ -306,7 +350,7 @@ body {
   justify-content: center;
 }
 
-#foot-link {
-  color: #01BAEF;
-  font-size: 1pc;
+.footer-link {
+  color: #01BAEF !important;
+  font-size: 1.2em !important;
 }
