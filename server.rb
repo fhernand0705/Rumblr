@@ -17,6 +17,8 @@ end
 class User < ActiveRecord::Base
   include BCrypt
 
+  has_many :posts, dependent: :destroy
+
   def password
     @password ||= Password.new(password_hash)
   end
@@ -33,6 +35,7 @@ end
 
 # Post model
 class Post < ActiveRecord::Base
+  belongs_to :user
 end
 
 ####################### CONTROLLER ##########################
@@ -80,13 +83,6 @@ post '/posts/create' do
   @post.save
 
   redirect "/users/#{session['user_id']}"
-end
-
-# REDIRECT to new post
-get '/posts/:id' do
-  @post = Post.find(params['id'])
-
-  erb :'/posts/show'
 end
 
 # READ login form

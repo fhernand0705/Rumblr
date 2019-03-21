@@ -34,7 +34,8 @@ body {
 }
 
 .dash:hover, .post:hover, .user:hover {
-  background-color: #01BAEF;
+  box-shadow: 0 0 5px 0 rgba(13, 11, 11, 0.81),
+   0 13px 2px -7px #01BAEF;
   border-radius: 5px;
 }
 
