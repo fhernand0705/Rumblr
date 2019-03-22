@@ -5,10 +5,27 @@
 
 <!-- USER'S PROFILE CARD -->
 <div class="card-container">
-  <div class="row box"><div class="column"><h4 class="header">name</h4></div></div>
-  <div class="row box"><div class="column"><h4 class="headerVal"><%= @user.first_name %></h4></div></div>
-  <div class="row box"><div class="column"><h4 class="header">email</h4></div></div>
-  <div class="row box"><div class="column"><h4 class="headerVal"><%= @user.email %></h4></div></div>
+  <div class="row box">
+    <div class="column">
+      <h4 class="header">name</h4>
+    </div>
+  </div>
+  <div class="row box">
+    <div class="column">
+      <h4 class="headerVal"><%= @user.full_name %></h4>
+    </div>
+  </div>
+  <div class="row box">
+    <div class="column">
+      <h4 class="header">email</h4>
+    </div>
+  </div>
+  <div class="row box">
+    <div class="column">
+      <h4 class="headerVal"><%= @user.email %>
+      </h4>
+    </div>
+  </div>
 
   <hr style="border-color:#B80C09;">
 
@@ -34,7 +51,7 @@
       </form>
     <% end %>
   <% else %>
-    <h1 class="header">No posts found...</h1>
+    <h1 class="noPosts">No posts found...</h1>
   <% end %>
  </div>
 </div>
